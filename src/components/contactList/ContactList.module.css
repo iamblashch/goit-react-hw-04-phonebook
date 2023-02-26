@@ -1,0 +1,30 @@
+.list {
+  list-style-type: circle;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.list {
+  width: 310px;
+  margin: 0;
+  padding: 0px 20px 20px 20px;
+  border-top: none;
+}
+.list_item {
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.delButton {
+  width: 60px;
+  height: 30px;
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+  background-color: #2196f3;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 15%);
+  border-radius: 5px;
+  border: none;
+  border-top: none;
+}
