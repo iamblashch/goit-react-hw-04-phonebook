@@ -26,5 +26,5 @@ ContactList.prototype = {
       number: PropTypes.string,
     })
   ),
-  remuve: PropTypes.func,
+  onRemuve: PropTypes.func,
 };

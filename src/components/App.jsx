@@ -15,7 +15,7 @@ export function App() {
 
   useEffect(() => {
     localStorage.setItem('contacts', JSON.stringify(contacts));
-  });
+  }, [contacts]);
 
   const addContact = data => {
     const dubleNumber = contacts.find(

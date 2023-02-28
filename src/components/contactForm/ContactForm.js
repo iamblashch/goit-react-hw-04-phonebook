@@ -1,34 +1,37 @@
 import { useState } from 'react';
-import css from'./ContactForm.module.css'
+import PropTypes from 'prop-types';
+import css from './ContactForm.module.css';
 
 const INITIAL_STATE = {
-        name: '',
-        number: '',   
-}
+  name: '',
+  number: '',
+};
 
-export const ContactForm = ({addContact}) => {
-  const [state, setState] = useState({...INITIAL_STATE})
+export const ContactForm = ({ addContact }) => {
+  const [state, setState] = useState({ ...INITIAL_STATE });
 
   const hendleChangeInput = ({ target: { name, value } }) => {
-    setState(prevState => ({...prevState, [name]: value}))
+    setState(prevState => ({ ...prevState, [name]: value }));
   };
 
   const hendleSubmitForm = e => {
     e.preventDefault();
-    addContact({...state})
-    reset()
+    addContact({ ...state });
+    reset();
   };
 
   const reset = () => {
-    setState({...INITIAL_STATE})
-  }
+    setState({ ...INITIAL_STATE });
+  };
 
   const { name, number } = state;
 
   return (
     <form onSubmit={hendleSubmitForm} className={css.formPhonebook}>
-      <label className={css.label} htmlFor="name">Name: </label>
-      <input 
+      <label className={css.label} htmlFor="name">
+        Name:{' '}
+      </label>
+      <input
         className={css.input}
         onChange={hendleChangeInput}
         type="text"
@@ -38,7 +41,9 @@ export const ContactForm = ({addContact}) => {
         value={name}
         required
       />
-      <label className={css.label} htmlFor="number">Tel: </label>
+      <label className={css.label} htmlFor="number">
+        Tel:{' '}
+      </label>
       <input
         className={css.input}
         onChange={hendleChangeInput}
@@ -49,7 +54,13 @@ export const ContactForm = ({addContact}) => {
         value={number}
         required
       />
-      <button className={css.button} type='submit'>Add contact</button>
+      <button className={css.button} type="submit">
+        Add contact
+      </button>
     </form>
-)
+  );
+};
+
+ContactForm.propTypes = {
+  addContact: PropTypes.func.isRequired,
 };

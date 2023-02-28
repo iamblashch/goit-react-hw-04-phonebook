@@ -13,4 +13,5 @@ export const ContactFilter = ({onFilter, value}) => {
 
 ContactFilter.propTypes = {
   onFilter: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
 };
